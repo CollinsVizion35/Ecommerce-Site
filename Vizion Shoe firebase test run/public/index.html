@@ -1,0 +1,828 @@
+<html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Vizion Shoes</title>
+
+        <!-- all styles -->
+		<!-- <link rel="stylesheet" href="./items.css">
+        <link rel="stylesheet" href="./user.css"> -->
+        <link rel="stylesheet" href="./style.css">
+        <!-- <link rel="stylesheet" href="./payment.css">
+        <link rel="stylesheet" href="./main.css">
+        <link rel="stylesheet" href="./explore.css"> -->
+
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia|Roboto">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
+        <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.9.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+ 
+ 
+
+    
+        <!--Favicon-->
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.png">
+        <!--Remix icons-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    </head>
+
+    <style>
+        a {
+            text-decoration: #fff;
+        }
+
+        .container-2,
+        .container-3 {
+            overflow-y: hidden;
+            overflow-x: scroll;
+        }
+    </style>
+    
+    
+    <body>
+    
+        <section class="loading-screen">
+    
+            <h1><div class="v">V</div><div class="i1">I</div><div class="z">Z</div><div class="i2">I</div><div class="o">O</div><div class="n">N</div></h1>
+        </section>
+    
+    
+    <!-- Aside -->
+    
+        <aside class="screen-lg-hidden">
+    
+    
+    
+            <div class="menu">
+                <i class="ri-menu-line menu-link aside-icon"  id="menu-link"></i>
+            </div>
+    
+            <div class="search-icon-div">
+                    <i class="ri-search-2-line search-icon aside-icon"></i>
+            </div>
+    
+            <div class="home">
+                <a href="./index.html"><i class="ri-home-8-line aside-icon"></i></a>
+            </div>
+    
+            <a href="./index2.html" class="account">
+                <i class="ri-account-circle-line aside-icon"></i>
+            </a>
+    
+            <div class="cart-icon screen-lg-hidden" id="cart-icon">
+            <a href="#"><i class="ri-shopping-cart-2-line aside-icon"></i></a><span class="items-length"><button class="items-length-btn items-length-btn-sm" id="items-length-btn">0</button></span>
+            </div>
+    
+        </aside>
+    
+        <main>
+    
+            
+    
+            <div class="screen-sm-hidden nav-2">
+                <div class="menu-list screen-sm-hidden">
+    
+                    <a href="./index.html">Home</a>
+                    <a href="#">Leather Shoes</a>
+                    <a href="#">Sneakers</a>
+                    <a href="#">Special shoes</a>
+                    <a href="#">Shoes Accessories</a>
+                    <button class="fav-click-lg">Favourites</button>
+                    <a href="#">Login></a>
+                </div>
+    
+                <a href="./index2.html"><i  class="ri-account-pin-circle-line screen-sm-hidden"></i></a>
+    
+    
+            <div class="search-contain">
+                <i class="ri-search-2-line screen-sm-hidden"></i>
+            </div>
+    
+                <div class="cart-icon-2 screen-sm-hidden" id="cart-icon">
+                    <a href="#"><i class="ri-shopping-cart-2-line aside-icon"></i></a><span class="items-length"><button class="items-length-btn items-length-btn-lg" id="items-length-btn">0</button></span>
+                </div>
+            </div>
+            
+            
+    <!-- Favourites -->
+    
+            <div class="fav-box" id="fav-box">
+    
+                <div class="fav-header">
+    
+                    <button class="close-fav-icon" id="close-fav-icon">
+                        <i class="ri-arrow-left-line exit-fav"></i>
+                    </button>
+    
+                    <div>
+                        <h3 class="fav-note"> Favourites </h3>
+                    </div>
+                </div>
+    
+                <ul class="fav-content" id="fav-content">
+    
+                    <h4 class="empty-fav">No saved favourite item yet</h4>
+    
+                    <!-- <li class="fav-content-box">
+    
+                        <div class="fav-image-box">
+    
+                            <img src="./Brown casual.jpg" width="150px" height="150px" alt="" class="fav-image">
+                        </div>
+    
+                        <div class="fav-content-details">
+    
+                            <h4 class="fav-content-name">
+                                Vans Shoe
+                            </h4>
+    
+                            <div class="fav-content-price">₦23,000</div>
+                        </div>
+                    </li> -->
+    
+                </ul>
+            </div>
+    
+    
+    
+    
+    <!-- Shopping Cart -->
+    
+            <div class="cart-box" id="cart-box">
+                <div class="cart-header">
+                    <div>
+                        <h3 class="cart-note">Your Cart</h3>
+                    </div>
+                    <button class="close-cart-icon" id="close-cart-icon">
+                        <i class="ri-close-line"></i>
+                    </button>
+                </div>
+    
+                
+                <ul class="cart-content" id="cart-content">
+    
+                    <h4 class="empty">Oops<br>Your Shopping Cart is Empty!</h4>
+    
+                    <!-- <li class="cart-content-box">
+    
+                        <div class="image-box">
+    
+                            <img src="./Brown casual.jpg" width="150px" height="150px" alt="" class="cart-image">
+                        </div>
+    
+                        <div class="cart-content-details">
+    
+                            <h4 class="cart-content-name">
+                                Vans Shoe
+                            </h4>
+    
+                            <div class="cart-content-price">₦23,000</div>
+    
+                            <div class="cart-incr-decr">
+    
+                                <button class="cart-decr">-</button>
+    
+                                <div class="incr-decr-num">1</div>
+    
+                                <button class="cart-incr">+</button>
+                            </div>
+                        </div>
+                    </li> -->
+                </ul>
+    
+                <div class="cart-checkout">
+                    <a href="./payment.html">
+                    <button class="checkout hidden">
+                        <span class="checkout-title">Checkout</span> <span class="checkout-price" id="checkout-price">₦ 23000</span>
+                    </button>
+                    </a>
+                </div>
+    
+    
+            </div>
+    
+    
+    <!-- Search Bar -->
+    
+            <div class="search">
+                <input class="search-bar bar" name="search-bar" id="search-bar" type="search" placeholder="search..." autofocus></input>
+            </div>
+    
+            <nav>
+                <ul class="menu-ul" id="menu-ul">
+                <div class="menu-box">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="#">Leather Shoes</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">Special shoes</a></li>
+                    <li><a href="#">Shoes Accessories</a></li>
+                    <li><button class="fav-click">Favourites</button></li>
+                    <li><a href="#">Login></a></li>
+                </div>
+                </ul>
+            </nav><br>
+    
+            
+    <!-- Header -->
+    
+            <header>
+                <div class="name">
+                    <p class="hub">VIZION<BR>
+                        FOOTWEARs HUb
+                    </p>
+    
+                    <br><br>
+                    
+                    <a href="./Explore.HTML"><button class="explore">
+                        Explore ->
+                    </button></a>
+                </div>
+    
+                <div class="header-image-box">
+    
+                    <img src="./header1.jpg" alt="" class="header-image header-image-1">
+                    <img src="./header2.jpg" alt="" class="header-image header-image-2">
+                    <img src="./header3.webp" alt="" class="header-image header-image-3">
+                </div>
+            </header>
+    
+    
+    
+    
+    <!-- note -->
+    
+            <section class="site-notes">
+    
+                <div class="site-note1 site-note">
+    
+                    <fieldset>
+                        <legend><i class="ri-message-line"></i></legend>
+    
+                        <h5 class="side-note">
+                            Your home for quality shoes<br>
+                            boots and sneaker.<br>
+                            Explore the world of Vizion Hub<br> to find more.
+                        </h5>
+                    </fieldset>
+                </div>
+    
+                <div class="site-note2 site-note">
+    
+                    <fieldset>
+                        <legend><i class="ri-message-line"></i></legend>
+    
+                        <h5 class="side-note">
+                            Making waves in the shoe<br>
+                             industry.<br>
+                            setting pave ways for others to follow<br>
+                            the trend. 
+                            </h5>
+                    </fieldset>
+                </div>
+            </section>
+    
+    
+    <!-- featured -->
+    
+    
+            <div class="featured container-main">
+                <h2>
+                    Featured Categories
+                </h2>
+                <div class="container featured-container">
+                    <a class="featured-box" id="shoe" href="#">
+                        <img width="300px" height="300px" src="./Designers men shoe.jpg"><div class="icon-featured"><i class="ri-footprint-fill"></i><h3>Leather Made</h3></div></img>
+                            
+                    </a>
+                    <a class="featured-box" id="casual" href="#">
+                        <img class="casneak" width="300px" height="300px" src="Yitai Classic.jpg"><div class="icon-featured"><i class="ri-footprint-fill"></i><h3>Casuals</h3></div></img>
+                        
+                    </a>
+                    <a class="featured-box" id="sneaker" href="#">
+                        <img class="casneak" width="300px" height="300px" src="Balenciaga brown.jpg"><div class="icon-featured"><i class="ri-footprint-fill"></i><h3>Sneakers</h3></div></img>
+                        
+                    </a>
+                    <a class="featured-box" id="crocs" href="#">
+                        <img class="casneak" width="300px" height="300px" src="./Crocs.jpg"><div class="icon-featured"><i class="ri-footprint-fill"></i><h3>Crocs</h3></div></img>
+                        
+                    </a>
+                    <div></div>
+                    <a class="featured-box" id="sandal" href="#">
+                        <img class="casneak" width="300px" height="300px" src="Sandals.jpg"><div class="icon-featured"><i class="ri-footprint-fill"></i><h3>Sandals</h3></div></img>
+                        
+                    </a>
+                </div>
+            </div>
+    
+    
+    
+    <!-- Best-buy -->
+    
+            <div class="best-buy container-main">
+                <h2>
+                    Best Buy
+                </h2>
+            <div class="container-2">
+    
+                <div class="product">
+                    <div class="col-8">
+                        <a href="#"><img width="300px" height="300px" src="mocassin slip.jpg" alt""></a><br>
+                        <h4 class="product-name">Mocassin slip</h4>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div></a>
+                        <p><span class="product-curr">₦</span> <span class="product-price">23000</span></p>
+                        <div class="on-hover">
+                            <button type="button" class="add-to-cart" data-product-id="1">
+                                ADD TO CART
+                            </button>
+                            <a href="./MocassinSlip.html" class="view-box"><button class="view">
+                                VIEW MORE
+                            </button></a>
+                        </div>
+                    </div>
+                </div>
+     
+                <div class="product">
+                    <div class="col-8">
+                        <a href="#"><img width="300px" height="300px" src="Eagles Trainer.jpg" alt""></a><br>
+                        <h4 class="product-name">Eagles Trainer</h4>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div></a>
+                        <p><span class="product-curr">₦</span> <span class="product-price">23000</span></p>
+                        <div class="on-hover">
+                            <button class="add-to-cart" data-product-id="2">
+                                ADD TO CART
+                            </button>
+                            <button class="view">
+                                VIEW MORE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="product">
+                    <div class="col-8">
+                        <a href="#"><img width="300px" height="300px" src="Leather Boot.jpg" alt""></a><br>
+                        <h4 class="product-name">Leather Boot</h4>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div></a>
+                        <p><span class="product-curr">₦</span> <span class="product-price">23000</span></p>
+                        <div class="on-hover">
+                            <button class="add-to-cart" data-product-id="3">
+                                ADD TO CART
+                            </button>
+                            <button class="view">
+                                VIEW MORE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="product">
+                    <div class="col-8">
+                        <a href="#"><img width="300px" height="300px" src="PopSugar variant.jpg" alt""></a><br>
+                        <h4 class="product-name">PopSugar variant</h4>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div></a>
+                        <p><span class="product-curr">₦</span> <span class="product-price">23000</span></p>
+                        <div class="on-hover">
+                            <button class="add-to-cart" data-product-id="4">
+                                ADD TO CART
+                            </button>
+                            <button class="view">
+                                VIEW MORE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="container-3">
+    
+                <div class="product">
+                    <div class="col-8">
+                        <a href="#"><img width="300px" height="300px" src="Vans Sport.jpg" alt""></a><br>
+                        <h4 class="product-name">Vans Sport</h4>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div></a>
+                        <p><span class="product-curr">₦</span> <span class="product-price">23000</span></p>
+                        <div class="on-hover">
+                            <button class="add-to-cart" data-product-id="5">
+                                ADD TO CART
+                            </button>
+                            <button class="view">
+                                VIEW MORE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="product">
+                    <div class="col-8">
+                        <a href="#"><img width="300px" height="300px" src="Sperry boat shoe.jpg" alt""></a><br>
+                        <h4 class="product-name">Sperry boat shoe</h4>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div></a>
+                        <p><span class="product-curr">₦</span> <span class="product-price">23000</span></p>
+                        <div class="on-hover">
+                            <button class="add-to-cart" data-product-id="6">
+                                ADD TO CART
+                            </button>
+                            <button class="view">
+                                VIEW MORE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="product">
+                    <div class="col-8">
+                        <a href="#"><img width="300px" height="300px" src="Yamamoto.jpg" alt""></a><br>
+                        <h4 class="product-name">Yamamoto Sneakers</h4>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div></a>
+                        <p><span class="product-curr">₦</span> <span class="product-price">23000</span></p>
+                        <div class="on-hover">
+                            <button class="add-to-cart" data-product-id="7">
+                                ADD TO CART
+                            </button>
+                            <button class="view">
+                                VIEW MORE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="product">
+                    <div class="col-8">
+                        <a href="#"><img width="300px" height="300px" src="run star ash 2.jpg" alt""></a><br>
+                        <h4 class="product-name">Run star ash sneakers</h4>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div></a>
+                        <p><span class="product-curr">₦</span> <span class="product-price">23000</span></p>
+                        <div class="on-hover">
+                            <button class="add-to-cart" data-product-id="8">
+                                ADD TO CART
+                            </button>
+                            <button class="view">
+                                VIEW MORE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+                
+    <br><br><br><br>
+    
+    
+    <!-- Advert 1 -->
+    
+            <section class="advert-1 container-main">
+    
+                <img  src="./Yitai Classic advert.jpg" alt="" class="Yitai-advert">
+    
+                <div class="yitai-descrip">
+    
+                    <div class="yitai-descrip-name">
+    
+                        <h2>YITAI Summer Bonanza!</h2>
+    
+    
+                        <div class="yitai-slash">
+                            <img width="100vw" height="50px" src="./slash.png" alt="" class="slash-png">
+                        </div>
+    
+                    </div>
+    
+    
+                    <div class="yitai-descrip-note">
+                            Get up to 20% Discount<br> When you shop on the first 3 days of july.
+                            <br>Promo starting 1st, July 2020.
+                    </div>
+                </div>
+            </section>
+    
+    
+    <!-- Half Price Deals -->
+    
+    <div class="half-price-deals container-main">
+    
+            <h3 class="half-heading">
+                <span>HALF PRICE DEALS</span>
+    
+                <div class="half-percent">
+                    <span>-50%</span>
+                </div>
+            </h3>
+    
+        <div class="half-price-box d-grid">
+    
+            <a href="#" class="half-price">
+    
+                <img width="40vw" height="100px" src="./Nike conversion.jpg" alt="" class="half-image">
+    
+                <div class="half-price-name">Nike conversion</div>
+    
+            </a>
+    
+            <a href="#" class="half-price">
+    
+                <img width="40vw" height="100px" src="./Nike Jordan.jpg" alt="" class="half-image">
+    
+                <div class="half-price-name">Nike Jordan</div>
+    
+            </a>
+    
+            <a href="#" class="half-price">
+    
+                <img width="40vw" height="100px" src="./Nike airforce.jpg" alt="" class="half-image">
+    
+                <div class="half-price-name">Nike Airforce</div>
+    
+            </a>
+    
+            <a href="#" class="half-price">
+    
+                <img width="40vw" height="100px" src="./Balenciaga milk.jpg" alt="" class="half-image">
+    
+                <div class="half-price-name">Balenciaga milk</div>
+    
+            </a>
+    
+            <a href="#" class="half-price">
+    
+                <img width="40vw" height="100px" src="./Talon.jpg" alt="" class="half-image">
+    
+                <div class="half-price-name">Talon</div>
+    
+            </a>
+    
+            <a href="#" class="half-price">
+    
+                <img width="40vw" height="100px" src="./Giuseppe Zanotti red.jpg" alt="" class="half-image">
+    
+                <div class="half-price-name">Giuseppe Zanotti red</div>
+    
+            </a>
+    
+            <a href="#" class="half-price">
+    
+                <img width="40vw" height="100px" src="./Crocs.jpg" alt="" class="half-image">
+    
+                <div class="half-price-name">Bloody Crocs</div>
+    
+            </a>
+    
+            <a href="#" class="half-price">
+    
+                <img width="40vw" height="100px" src="./Balenciaga black.jpg" alt="" class="half-image">
+    
+                <div class="half-price-name">Balenciaga black</div>
+    
+            </a>
+        </div>
+    </div>
+    
+    
+    <!-- vans advert -->
+    
+    <section class="advert-1 vans-ads container-main">
+    
+    
+    
+        <img  src="./vans advert.jpg" alt="" class="Yitai-advert">
+    
+        <i class="ri-emotion-fill"></i>
+    
+        <div class="yitai-descrip vans-descrip">
+    
+            <div class="yitai-descrip-name vans-name-des">
+    
+                <h2>Vans Anniversary Sales!</h2>
+            </div>
+    
+    
+            <div class="yitai-descrip-note vans-note">
+                    Get up to 20% Discount<br> When you shop on the first 3 days of july.
+                    <br>Promo starting 1st, July 2020.
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- sponsors -->
+    
+        <div class="sponsors d-grid container-main">
+    
+            <a href="#" class="adidas sponsors-image-box">
+    
+                <img src="./Adidas_logo.png" alt="" class="sponsors-image">
+            </a>
+    
+            <a href="#" class="adidas sponsors-image-box">
+    
+                <img src="./nike.png" alt="" class="sponsors-image">
+            </a>
+    
+            <a href="#" class="adidas sponsors-image-box">
+    
+                <img src="./versace.png" alt="" class="sponsors-image">
+            </a>
+    
+            <a href="#" class="adidas sponsors-image-box">
+    
+                <img src="./louis vuitton.png" alt="" class="sponsors-image">
+            </a>
+    
+            <a href="#" class="adidas sponsors-image-box">
+    
+                <img src="./fenty.png" alt="" class="sponsors-image img-excep">
+            </a>
+    
+            <a href="#" class="adidas sponsors-image-box">
+    
+                <img src="./dior.png" alt="" class="sponsors-image">
+            </a>
+    
+            <a href="#" class="adidas sponsors-image-box">
+    
+                <img src="./cocaco.png" alt="" class="sponsors-image">
+            </a>
+    
+            <a href="#" class="adidas sponsors-image-box">
+    
+                <img src="./puma-logo.png" alt="" class="sponsors-image">
+            </a>
+    
+            <a href="#" class="adidas sponsors-image-box">
+    
+                <img src="./balenciaga-logo.png" alt="" class="sponsors-image">
+            </a>
+    
+            <a href="#" class="adidas sponsors-image-box">
+    
+                <img src="./new balance.png" alt="" class="sponsors-image img-excep">
+            </a>
+        </div>
+            
+    
+            
+    
+        </main>
+    
+    <!--footer-->
+    
+            <footer class="footer">
+    
+            <section class="footer-section">
+    
+                <div class="logo">
+                    VIZION <span class="footwears">footwears</span>
+                </div>
+                <div class="text-list">
+                
+                    <a class="text-links">HELP CENTER</a>   
+                        
+                    <a class="text-links">CONTACT</a>    
+                    
+                    <a class="text-links">TERMS & CONDITION</a>    
+                        
+                    <a class="text-links">REPORT A PRODUCT</a>
+                
+                    <a class="text-links">SHIP YOUR PACKAGE ANYWHERE IN THE WORLD</a>    
+                    
+                    <a class="text-links">BLACK FRIDAY</a>
+                </div><br>
+            <div class="app">
+                    Follow us on our social media handles
+                    <ul class="list social-media">
+                        <li class="list-item">
+                            <a href="#" class="list-link">
+                                <i class="ri-whatsapp-fill"></i>
+                            </a>
+    
+                            <a href="#" class="list-link">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+    
+                            <a href="#" class="list-link">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+    
+                            <a href="#" class="list-link">
+                                <i class="ri-reddit-fill"></i>
+                            </a>
+    
+                            <a href="#" class="list-link">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+    
+                            <a href="#" class="list-link">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+    
+                            <a href="#" class="list-link">
+                                <i class="ri-github-fill"></i>
+                            </a>
+                        </li>
+                    </ul>
+                
+            </div>
+            <p>©2022 Vizion Concept. All Rights Reserved.</p><br>
+            </section>
+    
+            </footer>	
+        
+    
+                <!-- jquery -->
+        
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    
+                <!--swiper.js-->
+                <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    
+                <!--bootstap js  -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!--custom script-->
+                <script src="./main.js"></script>
+                <script src="./payment.js"></script>
+                <script src="./user.js"></script>
+                <script src="./app.js"></script>
+                <script src="./script.js"></script>
+                <script src="./search.js"></script>
+                <script src="./favourites.js"></script>
+                <script src="./facebookAuth.js"></script>
+                <script src="./shoppingCart.js"></script>
+                <script src="./EmailPassword.js"></script>
+    
+    </body>
+    
+    </html>

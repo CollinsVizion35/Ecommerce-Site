@@ -1,0 +1,416 @@
+<html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Vizion Shoes/mocassin slip</title>
+
+        <!-- all styles -->
+		<link rel="stylesheet" href="./items.css">
+        <link rel="stylesheet" href="./user.css">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./payment.css">
+        <link rel="stylesheet" href="./main.css">
+        <link rel="stylesheet" href="./explore.css">
+
+        <!-- google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	
+		<!--Favicon-->
+		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.png">
+		<!--Remix icons-->
+		<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+	
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+	</head>
+	
+	
+	<body>
+
+        <!-- Aside -->
+    
+      <aside class="screen-lg-hidden">
+    
+    
+    
+        <div class="menu">
+            <i class="ri-menu-line menu-link aside-icon"  id="menu-link"></i>
+        </div>
+
+        <div class="search-icon-div">
+                <i class="ri-search-2-line search-icon aside-icon"></i>
+        </div>
+
+        <div class="home">
+            <a href="./index.html"><i class="ri-home-8-line aside-icon"></i></a>
+        </div>
+
+        <a href="index2.html" class="account">
+                <embed width="20px" height="20px" src="account.png">
+        </a>
+
+        <div class="cart-icon screen-lg-hidden" id="cart-icon">
+        <a href="#"><img width="20px" height="20px" src="cart2.png"></a><span class="items-length"><button class="items-length-btn items-length-btn-sm" id="items-length-btn">0</button></span>
+        </div>
+
+    </aside>
+
+    <main>
+
+        <!-- Go Back -->
+		<button class="goBack" id="goBack" onclick="history.back()"><i class="ri-arrow-left-line"></i></button>        
+
+        <div class="screen-sm-hidden nav-2">
+            <div class="menu-list screen-sm-hidden">
+
+                <a href="./index.html">Home</a>
+                <a href="#">Leather Shoes</a>
+                <a href="#">Sneakers</a>
+                <a href="#">Special shoes</a>
+                <a href="#">Shoes Accessories</a>
+                <button class="fav-click-lg">Favourites</button>
+                <a href="#">Login></a>
+            </div>
+
+            <a href="./index2.html"><i  class="ri-account-pin-circle-line screen-sm-hidden"></i></a>
+
+
+        <div class="search-contain">
+            <i class="ri-search-2-line screen-sm-hidden"></i>
+        </div>
+
+            <div class="cart-icon-2 screen-sm-hidden" id="cart-icon">
+                <a href="#"><img width="20px" height="20px" src="cart2.png"></a><span class="items-length"><button class="items-length-btn items-length-btn-lg" id="items-length-btn">0</button></span>
+            </div>
+        </div>
+
+
+        
+            
+    <!-- Favourites -->
+    
+    <div class="fav-box" id="fav-box">
+    
+        <div class="fav-header">
+
+            <button class="close-fav-icon" id="close-fav-icon">
+                <i class="ri-arrow-left-line exit-fav"></i>
+            </button>
+
+            <div>
+                <h3 class="fav-note"> Favourites </h3>
+            </div>
+        </div>
+
+        <ul class="fav-content" id="fav-content">
+
+            <h4 class="empty-fav">No saved favourite item yet</h4>
+
+            <!-- <li class="fav-content-box">
+
+                <div class="fav-image-box">
+
+                    <img src="./Brown casual.jpg" width="150px" height="150px" alt="" class="fav-image">
+                </div>
+
+                <div class="fav-content-details">
+
+                    <h4 class="fav-content-name">
+                        Vans Shoe
+                    </h4>
+
+                    <div class="fav-content-price">₦23,000</div>
+                </div>
+            </li> -->
+
+        </ul>
+    </div>
+
+
+
+
+<!-- Shopping Cart -->
+
+    <div class="cart-box" id="cart-box">
+        <div class="cart-header">
+            <div>
+                <h3 class="cart-note">Your Cart</h3>
+            </div>
+            <button class="close-cart-icon" id="close-cart-icon">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+
+        
+        <ul class="cart-content" id="cart-content">
+
+            <h4 class="empty">Oops<br>Your Shopping Cart is Empty!</h4>
+
+            <!-- <li class="cart-content-box">
+
+                <div class="image-box">
+
+                    <img src="./Brown casual.jpg" width="150px" height="150px" alt="" class="cart-image">
+                </div>
+
+                <div class="cart-content-details">
+
+                    <h4 class="cart-content-name">
+                        Vans Shoe
+                    </h4>
+
+                    <div class="cart-content-price">₦23,000</div>
+
+                    <div class="cart-incr-decr">
+
+                        <button class="cart-decr">-</button>
+
+                        <div class="incr-decr-num">1</div>
+
+                        <button class="cart-incr">+</button>
+                    </div>
+                </div>
+            </li> -->
+        </ul>
+
+        <div class="cart-checkout">
+            <a href="./payment.html">
+            <button class="checkout hidden">
+                <span class="checkout-title">Checkout</span> <span class="checkout-price" id="checkout-price">₦ 23000</span></a>
+            </button>
+            </a>
+        </div>
+
+
+    </div>
+
+ 
+<!-- Search Bar -->
+
+    <div class="search">
+        <input class="search-bar bar" name="search-bar" id="search-bar" type="search" placeholder="search..." autofocus></input>
+    </div>
+
+    <nav>
+        <ul class="menu-ul" id="menu-ul">
+        <div class="menu-box">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">Leather Shoes</a></li>
+            <li><a href="#">Sneakers</a></li>
+            <li><a href="#">Special shoes</a></li>
+            <li><a href="#">Shoes Accessories</a></li>
+            <li><button class="fav-click">Favourites</button></li>
+            <li><a href="#">Login></a></li>
+        </div>
+        </ul>
+    </nav><br>
+        </main>
+
+
+
+
+
+        <section class="user-section">
+
+            <h4 class="user-section-header">Homepage / <span class="headerAccount">My Account</span></h4>
+
+            <h1 class="user-section-header">My Account</h1>
+
+            <div class="user-section-box">
+                <div class="side-section">
+                    <ul class="side-lists">
+                        <li class="side-list" id="sideAccountDashboard"><i class="ri-dashboard-3-line"></i>Account Dashboard</li>
+                        <li class="side-list" id="sideFavourites"><i class="ri-heart-2-line"></i>Favourites</li>
+                        <li class="side-list" id="sideOrders"><i class="ri-shopping-bag-2-line"></i>My Orders</li>
+                        <li class="side-list" id="sideInbox"><i class="ri-mail-star-line"></i>Inbox</li>
+                        <li class="side-list" id="sideAccountSettings"><i class="ri-settings-5-line"></i>Account settings</li>
+                    </ul>
+                </div>
+
+                <div class="main-section">
+
+                    <div class="main-list" id="userAccountDashboard">
+
+                    <div class="main-list-box">
+                        
+                    <div class="dashboardPhotoBox">
+                        
+                        <div class="profile-pic">
+                            <label class="-label" for="file">
+                                <span class="glyphicon glyphicon-camera"></span>
+                                <span>Change Image</span>
+                            </label>
+                            <input id="file" type="file" onchange="loadFile(event)"/>
+                            <img src="air balloon.jpg" id="output" width="200" />
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="userDashboardNameBox">
+                        <h2 id="userDashboardName">Collins Vizion</h2>
+                        <h5 id="userDashboardUserName">@Collins_Vizion</h5>
+                    </div>
+
+                        <h3 id="userDashboardCountry"><i class="ri-map-pin-range-line"></i>Nigeria</h3>
+
+                        <div class="userDashboardAbout">
+                            <h2 class="userAboutHeader">
+                                <i class="ri-account-pin-box-fill"></i>About
+                            </h2>
+
+                            <div class="userDashboardInfos">
+                                <h5 class="userDashboardInfo" id="userDashboardPhone">
+                                    <span class="DashboardInfoTitle">Phone:</span> <span class="InfoTitlecolor">+234 70 4202 9807</span>
+                                </h5>
+                                
+                                <h5 class="userDashboardInfo" id="userDashboardAddress">
+                                    <span class="DashboardInfoTitle">Address:</span> No 74b Port-Harcourt, Rivers State
+                                </h5>
+                                
+                                <h5 class="userDashboardInfo" id="userDashboardEmail">
+                                    <span class="DashboardInfoTitle">E-mail:</span> <span class="InfoTitlecolor">vizionconcept45@gmail.com</span>
+                                </h5>
+                                
+                                <h5 class="userDashboardInfo" id="userDashboardBirthday">
+                                    <span class="DashboardInfoTitle">Birthday:</span> 28th December, 1999
+                                </h5>
+                                
+                                <h5 class="userDashboardInfo" id="userDashboardGender">
+                                    <span class="DashboardInfoTitle">Gender:</span> Male
+                                </h5>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    </div>
+
+                    <div class="main-list" id="userFavourites">
+
+                        <div class="dim-main-list">
+                        <i class="ri-heart-2-line icon-main-list"></i>
+                        <h2>
+                            Your Favourites will appear here once<br>
+                            you make a wish <i class="ri-emotion-happy-fill"></i>
+                        </h2>
+                        </div>
+                    </div>
+
+                    <div class="main-list" id="userOrders">
+
+                        <div class="dim-main-list">
+                        <i class="ri-shopping-bag-2-line icon-main-list"></i>
+                        <h2>
+                            Your Order History will appear here<br>
+                            <i class="ri-emotion-happy-fill"></i>
+                        </h2>
+                        </div>
+                    </div>
+
+                    <div class="main-list" id="userInbox">
+
+                        <div class="dim-main-list">
+                        <i class="ri-mail-star-line icon-main-list"></i>
+                        <h2>
+                            You have no messages yet<br>
+                            <i class="ri-emotion-sad-fill"></i>
+                        </h2>
+                        </div>
+                    </div>
+
+                    <div class="main-list" id="userAccountSettings">
+                        
+                        <div class="account-settings-box">
+
+                            <h5 class="image-edit">
+                                Edit your profile image from your account Dashbord
+                            </h5>
+
+                            <div class="account-info-settings">
+
+                                <div>
+                                    <label for="firstName" class="firstName">First Name</label>
+                                    <input type="text" placeholder="Edit you First name" id="inputFirstName" class="checkoutInput inputFirstName">
+                                </div>
+
+                                <div>
+                                    <label for="lastName" class="lastName">Last Name</label>
+                                    <input type="text" placeholder="Edit you Last name" id="inputLastName" class="checkoutInput inputLastName">
+                                </div>
+
+                                <div>
+                                    <label for="email" class="email">Email</label>
+                                    <input type="email" placeholder="Edit your Email Address" id="inputEmail" class="checkoutInput inputEmail">
+                                </div>
+
+                                <div>
+                                    <label for="username" class="username">Username</label>
+                                    <input type="text" placeholder="Edit your Username" id="inputUsername" class="checkoutInput inputUsername">
+                                </div>
+
+                                <div>
+                                    <label for="address" class="address">Address</label>
+                                    <input type="text" placeholder="Edit your Address" id="inputAddress" class="checkoutInput inputAddress">
+                                </div>
+
+                                <div>
+                                    <label for="Password" class="Password">Password</label>
+                                    <input type="password" placeholder="Enter your New password" id="inputPassword" class="checkoutInput inputPassword">
+                                </div>
+
+                                <div>
+                                    <label for="birthday" class="birthday">Date Of Birth</label>
+                                    <input type="date" placeholder="Edit your date of Birth" id="inputBirthday" class="checkoutInput inputBirthday">
+                                </div>  
+
+                                <div>
+                                    <label for="gender" class="gender">Gender</label>
+                                    <input type="text" placeholder="Change Gender" id="inputGender" class="checkoutInput inputGender">
+                                </div>  
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+    
+        <!-- payPal js -->
+        <script src="https://www.paypal.com/sdk/js?client-id=AQjk-ByrtLjFEDylOdaQIJq1ipNv_nILPY5xSgsVOfWWfQHKK5tNldZT5sTZsmuJ_pAEt9RnNbqjEnG-"></script>
+
+        <!-- jquery -->
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+
+        <!--swiper.js-->
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    
+        <!--bootstap js  -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!--custom script-->
+        <script src="./main.js"></script>
+        <script src="./payment.js"></script>
+        <script src="./user.js"></script>
+        <script src="./app.js"></script>
+        <script src="./script.js"></script>
+        <script src="./search.js"></script>
+        <script src="./favourites.js"></script>
+        <script src="./facebookAuth.js"></script>
+        <script src="./shoppingCart.js"></script>
+        <script src="./EmailPassword.js"></script>
+
+        <!-- paystack js -->
+        <script src="https://js.paystack.co/v2/inline.js"></script>
+    </body>
+
+    </html>
